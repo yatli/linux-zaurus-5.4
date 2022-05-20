@@ -11,11 +11,11 @@ pkgbase=linux
 # doesn't patch: linux-5.10.115
 # doesn't compile: linux-5.4.193
 # works: _srcname=linux-5.0
-_srcname=linux-5.0.19
+_srcname=linux-5.4.193
 _kernelname=${pkgbase#linux}
 _desc="ARMv5tel zaurus"
-pkgver=5.0
-pkgrel=2
+pkgver=5.4
+pkgrel=1
 arch=('arm')
 url="http://www.kernel.org/"
 license=('GPL2')

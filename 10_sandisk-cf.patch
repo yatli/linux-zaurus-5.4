@@ -1,14 +1,3 @@
-From 0108132f1008107737a4549c4fa6d19dc91f9ece Mon Sep 17 00:00:00 2001
-From: greguu <greguu@null.net>
-Date: Sun, 11 Feb 2018 15:22:55 +1300
-Subject: [PATCH] Add support for SandDisk Ultra 8GB CF Card
-
----
- drivers/ata/pata_pcmcia.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/ata/pata_pcmcia.c b/drivers/ata/pata_pcmcia.c
-index a541eacc..f72ba32e 100644
 --- a/drivers/ata/pata_pcmcia.c
 +++ b/drivers/ata/pata_pcmcia.c
 @@ -314,6 +314,7 @@ static const struct pcmcia_device_id pcmcia_devices[] = {

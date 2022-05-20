@@ -31,7 +31,7 @@
  
 +	if (host->pdata && host->pdata->flags & MMC_SPI_USE_RO_GPIO) {
 -	/* Index 1 is write protect/read only */
--	status = mmc_gpiod_request_ro(mmc, NULL, 1, false, 0, NULL);
+-	status = mmc_gpiod_request_ro(mmc, NULL, 1, 0, NULL);
 -	if (status == -EPROBE_DEFER)
 -		goto fail_add_host;
 -	if (!status)
@@ -72,8 +72,8 @@
  	struct mmc_spi_platform_data pdata;
  };
 @@ -92,6 +102,30 @@
- 		oms->pdata.ocr_mask |= mask;
- 	}
+ 	if (mmc_of_parse_voltage(np, &oms->pdata.ocr_mask) <= 0)
+ 		goto err_ocr;
  
 +	for (i = 0; i < ARRAY_SIZE(oms->gpios); i++) {
 +		enum of_gpio_flags gpio_flags;
