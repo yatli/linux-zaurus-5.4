@@ -25,7 +25,7 @@
  		return mmc_gpio_get_ro(mmc);
  	if (host->pdata && host->pdata->get_ro)
  		return !!host->pdata->get_ro(mmc_dev(mmc));
-@@ -749,41 +749,24 @@
+@@ -749,40 +749,25 @@
  					      host->pdata->gpio_power_invert);
  		}
  
