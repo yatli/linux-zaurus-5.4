@@ -68,6 +68,8 @@ prepare() {
   git apply ../09_usb_power.patch
   git apply ../10_sandisk-cf.patch
 
+  # apply yatli patches
+  git apply ../11-revert-mmc-slot-gpio.patch
   git apply ../01-fix-pxa27x-udc.patch
 
   cat "${srcdir}/config" > ./.config
