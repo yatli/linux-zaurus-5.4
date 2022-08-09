@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm 5.4.193-1 Kernel Configuration
+# Linux/arm 5.4.193-2 Kernel Configuration
 #
 
 #
@@ -2581,7 +2581,7 @@ CONFIG_SSB_POSSIBLE=y
 CONFIG_SSB=m
 CONFIG_SSB_BLOCKIO=y
 CONFIG_SSB_PCMCIAHOST_POSSIBLE=y
-# CONFIG_SSB_PCMCIAHOST is not set
+CONFIG_SSB_PCMCIAHOST=y
 CONFIG_SSB_SDIOHOST_POSSIBLE=y
 CONFIG_SSB_SDIOHOST=y
 # CONFIG_SSB_DRIVER_GPIO is not set

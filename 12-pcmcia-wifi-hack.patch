@@ -1,0 +1,17 @@
+--- a/drivers/pcmcia/cistpl.c
++++ b/drivers/pcmcia/cistpl.c
+@@ -165,12 +165,14 @@ int pcmcia_read_cis_mem(struct pcmcia_so
+        } else {
+                u_int inc = 1, card_offset, flags;
+
++    /* Hack: SUMMIT SDC-CF10G has config_base of 0x700
+                if (addr > CISTPL_MAX_CIS_SIZE) {
+                        dev_dbg(&s->dev,
+                                "attempt to read CIS mem at addr %#x", addr);
+                        memset(ptr, 0xff, len);
+                        return -1;
+                }
++    */
+
+                flags = MAP_ACTIVE | ((cis_width) ? MAP_16BIT : 0);
+                if (attr) {

@@ -15,7 +15,7 @@ _srcname=linux-5.4.193
 _kernelname=${pkgbase#linux}
 _desc="ARMv5tel zaurus"
 pkgver=5.4
-pkgrel=1
+pkgrel=2
 arch=('arm')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -33,9 +33,13 @@ source=("https://cdn.kernel.org/pub/linux/kernel/v5.x/${_srcname}.tar.xz"
 	'08_revert_pcmcia_cpufreq.patch'
 	'09_usb_power.patch'
 	'10_sandisk-cf.patch'
+	'11-revert-mmc-slot-gpio.patch'
+  '12-pcmcia-wifi-hack.patch'
   '01-fix-pxa27x-udc.patch'
 )
 md5sums=('SKIP'
+	 'SKIP'
+	 'SKIP'
 	 'SKIP'
 	 'SKIP'
 	 'SKIP'
@@ -71,6 +75,7 @@ prepare() {
   # apply yatli patches
   git apply ../11-revert-mmc-slot-gpio.patch
   git apply ../01-fix-pxa27x-udc.patch
+  git apply ../12-pcmcia-wifi-hack.patch
 
   cat "${srcdir}/config" > ./.config
 
